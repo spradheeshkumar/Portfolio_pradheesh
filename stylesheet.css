@@ -813,6 +813,27 @@ html {
     border-radius: 0.5rem;
 }
 
+@media (max-width: 600px) {
+  body > *:not(script):not(style) {
+    display: none !important;
+  }
+  body::before {
+    content: "This website is not available on mobile devices. Please use a desktop or tablet.";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    background: #051129;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100vw;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 9999;
+  }
+}
+
 
 
 
@@ -908,71 +929,3 @@ html {
     }
 }
 
-@media (max-width: 768px) {
-    .header {
-        padding: 10px 5%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .navbar a {
-        margin: 10px 0;
-        font-size: 18px;
-    }
-
-    .home {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 5%;
-        height: auto;
-    }
-
-    .home-content h1 {
-        font-size: 36px;
-    }
-
-    .home-content h3 {
-        font-size: 24px;
-    }
-
-    .home-content p {
-        font-size: 16px;
-    }
-
-    .about-container {
-        flex-direction: column;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .services-list {
-        grid-template-columns: 1fr;
-        padding: 0 20px;
-    }
-
-    .skills-section {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .portfolio-content {
-        grid-template-columns: 1fr;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-
-    .contact {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-
-    .contact-text h2 {
-        font-size: 40px;
-    }
-}
