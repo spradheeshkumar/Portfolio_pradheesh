@@ -13,13 +13,16 @@
     <div>
         <header class="header">
             <a href="#" class="logo">Portfolio.</a>
-            <nav class="navbar">
-                <a href="#home" style="--i:1"class="active" >Home</a>
+            <nav class="navbar" id="navbar">
+                <a href="#home" style="--i:1" class="active">Home</a>
                 <a href="#about" style="--i:2">About</a> 
                 <a href="#skills" style="--i:3">Skills</a>
                 <a href="#project" style="--i:4">Portfolio</a>
                 <a href="#contact" style="--i:5">Contact</a>
             </nav>
+            <div class="hamburger" id="hamburger">
+                <i class='bx bx-menu'></i>
+            </div>
         </header>
         <div class="home" id="home">
             <div class="home-content">
@@ -34,7 +37,7 @@
                         <a href="https://www.linkedin.com/in/s-pradheesh-kumar17" style="--i:9"><i class='bx bxl-linkedin'></i></a>
                         <a href="https://github.com/spradheeshkumar" style="--i:10"><i class='bx bxl-github'></i></a>
                     </div>
-                        <a href="https://drive.google.com/file/d/1wvPjyQTAUCp5POYPAOBv-zl6Bx5EEecG/view?usp=drivesdk " class="resume-btn" target="_blank" download>My Resume    <i class='bx bxs-download' ></i></a>
+                        <a href="your-resume.pdf" class="resume-btn" target="_blank" download>My Resume    <i class='bx bxs-download' ></i></a>
             </div>
         </div>
     </div>
@@ -90,7 +93,7 @@
 
 
 <section id="skills">
-<h1 class="sub-title2">My<span>Skills</span></h1>
+<h1 class="sub-title2">My<span>Skill</span></h1>
 
 <section class="skills-section">
 <div class="container1" id="Skills">
@@ -182,7 +185,7 @@
                     <div class="portfolio-content">
 
                         <div class="row">
-                            <img src="project1.png">
+                            <img src="project1.png" alt="Augmented-Reality Glasses project preview">
                             <div class="layer">
                                 <h5>Augmented-Reality Glasses</h5>
                                 <p>This project aims to develop a system that can translate and transcribe spoken language in real-time using augmented-reality glasses. The system will use speech recognition and translation algorithms to convert spoken language into text and then display it on the glasses.</p>
@@ -191,7 +194,7 @@
                         </div>
 
                         <div class="row">
-                            <img src="project2.png">
+                            <img src="project2.png" alt="Screenshot of Web Development project">
                             <div class="layer">
                                 <h5>Web Development</h5>
                                 <p>This project showcases my skills and experiences in web development. It includes sections on my background, skills, projects, and contact information, all designed to highlight my capabilities as a web developer.</p>
@@ -200,7 +203,7 @@
                         </div>
 
                         <div class="row">
-                            <img src="project3.png">
+                            <img src="project3.png" alt="Coming soon project preview">
                             <div class="layer">
                                 <h5>Comming Soon...</h5>
                                 <p>Stay tuned for more exciting projects! I am currently working on several innovative ideas that will be showcased here soon. Keep an eye out for updates!</p>
@@ -235,25 +238,27 @@
     <!-- RIGHT COLUMN -->
     <div class="contact-form">
         <div class="contact-form">
-        <form action="https://formspree.io/f/xpwrpndg">
-            <input type="text" placeholder="Enter Your Name" required>
-            <input type="email" placeholder="Enter Your Email" required>
-            <input type="text" placeholder="Enter Your Subject" required>
-            <textarea placeholder="Enter Your Message" required></textarea>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Enter Your Name" required>
+            <input type="email" name="email" placeholder="Enter Your Email" required>
+            <input type="text" name="subject" placeholder="Enter Your Subject" required>
+            <textarea name="message" placeholder="Enter Your Message" required></textarea>
             <input type="submit" value="Submit" class="send">
         </form>
     </div>
 </section>
 <div class="last-text">
-    <p>Designed and Developed by S Pradheesh Kumar © 2025</p>
+    <p>Designed & Developed by <b>S Pradheesh Kumar</b> &copy; 2025</p>
 </div>
         <script src="main.js"></script>
         <a href="#" class="top"><i class='bx bx-chevron-up' style='color:#000000' ></i></a>
         <script>
-if (window.innerWidth < 600) {
-    document.body.innerHTML = "<div style='display:flex;justify-content:center;align-items:center;height:100vh;font-size:1.5rem;text-align:center;color:#fff;background:#051129;'>This website is not available on mobile devices. Please use a desktop or tablet.</div>";
-    document.body.style.background = "#051129";
-}
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Message sent!');
+    this.reset();
+});
 </script>
 </body>
 </html>
+
